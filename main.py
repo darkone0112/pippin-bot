@@ -25,7 +25,7 @@ async def setup(bot):
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Game(name='Listening to !help'))
+    await bot.change_presence(activity=discord.Game(name='Waiting for the second breakfast'))
     print(f'{bot.user.name} is ready!')
     await bot.add_cog(music_cog(bot))
 
