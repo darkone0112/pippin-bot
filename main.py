@@ -1,13 +1,33 @@
-import discord # pip install discord.py
+import asyncio
+import discord
 from discord.ext import commands
 import os
-import youtube_dl # pip install youtube_dl
-from help_cog import help_cog # Path: help_cog.py
-from music_cog import music_cog # Path: music_cog.py
 
-bot = commands.Bot(command_prefix='sing', description='A bot that plays music')
+intents = discord.Intents.all()
+intents.members = True
+intents.presences = True
+intents.guilds = True
 
-bot.add_cog(help_cog(bot))
-bot.add_cog(music_cog(bot))
+
+#import all of the cogs
+from help_cog import help_cog
+from music_cog import music_cog
+
+bot = commands.Bot(command_prefix='!', intents=intents)
+
+#remove the default help command so that we can write out own
 bot.remove_command('help')
-bot.run(os.getenv('TOKEN'))
+
+#register the class with the bot
+
+async def setup(bot):
+    await bot.add_cog(music_cog(bot))
+
+@bot.event
+async def on_ready():
+    await bot.change_presence(activity=discord.Game(name='Listening to !help'))
+    print(f'{bot.user.name} is ready!')
+    await bot.add_cog(music_cog(bot))
+
+#start the bot with our token
+bot.run("MTA4ODQ4Mzc1Nzc3MTcyMjc3Mg.G5qUqp.rIzFUs9K_tswXU4jqpuOuv-BJG06lI5dS38wtk")
