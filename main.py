@@ -30,4 +30,4 @@ async def on_ready():
     await bot.add_cog(music_cog(bot))
 
 #start the bot with our token
-bot.run("MTA4ODQ4Mzc1Nzc3MTcyMjc3Mg.G5qUqp.rIzFUs9K_tswXU4jqpuOuv-BJG06lI5dS38wtk")
+bot.run()
