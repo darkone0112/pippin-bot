@@ -1,0 +1,25 @@
+# Ignore Token.env file
+.env
+
+# Ignore other sensitive files
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+
+# Ignore temporary files
+*.tmp
+*.bak
+*.swp
+
+# Ignore IDE or editor specific files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.sln
+*.suo
+*.user
+*.xcworkspace
+*.xcodeproj
