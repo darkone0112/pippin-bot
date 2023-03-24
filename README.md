@@ -9,6 +9,7 @@ Before installing Pippin Bot, you need to ensure that you have the following pre
    <l1>-Git version control system</l1><br>
    <l1>-Installing Pippin Bot</l1><br>
 </ul>
+
 <h2>#To install Pippin Bot, follow these steps:</h2>
 1-Open a command prompt or terminal window.<br>
 2-Clone the Pippin Bot repository using the following command:<br>
