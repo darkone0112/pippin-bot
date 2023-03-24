@@ -31,3 +31,4 @@ async def on_ready():
 
 #start the bot with our token
 bot.run()
+#add the token to the .env file and then import it here with os.getenv('TOKEN') or something like that
