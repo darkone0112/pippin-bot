@@ -30,5 +30,5 @@ async def on_ready():
     await bot.add_cog(music_cog(bot))
 
 #start the bot with our token
-bot.run()
+bot.run(os.getenv("TOKEN"))
 #add the token to the .env file and then import it here with os.getenv('TOKEN') or something like that

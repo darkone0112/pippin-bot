@@ -108,8 +108,9 @@ class music_cog(commands.Cog):
     @commands.command(name = 'skip', help = 'Skips the current song', aliases = ['s'])
     async def skip(self, ctx, *args):
         if self.is_playing:
+            print("Skipping song")
             self.vc.stop()
-            await self.play_music(ctx)
+
             
     @commands.command(name = 'queue', help = 'Shows the current queue', aliases = ['q'])
     async def queue(self, ctx, *args):
@@ -135,9 +136,3 @@ class music_cog(commands.Cog):
         await self.vc.disconnect()
         await ctx.send('GREAT! WHERE ARE WE GOING?')
         
-
-        
-        
-        
-        
-    
