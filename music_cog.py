@@ -60,7 +60,6 @@ class music_cog(commands.Cog):
             print(nurl + " is playing")
             self.vc.play(discord.FFmpegPCMAudio(nurl, **self.FFMPEG_OPTIONS), after=lambda e: self.play_next())        
         else:
-
             self.is_playing = False
             
     @commands.command(name = 'play', help = 'Plays a song from a url or search query (searches youtube)', alias = ['p',"sing","s","playing"])
@@ -76,7 +75,6 @@ class music_cog(commands.Cog):
             if type(song) == type(True):
                 await ctx.send('Song not found')
             else:
-                
                 await ctx.send('Song added to queue')
                 self.music_queue.append([song, voice_channel])
                 
