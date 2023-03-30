@@ -41,27 +41,21 @@ class music_cog(commands.Cog):
             self.is_playing = True
             nurl = self.music_queue[0][0]['source']
             
-            print("Ojo")
-            
             if self.vc == None or not self.vc.is_connected():
                 self.vc = await self.music_queue[0][1].connect()
-                print("Ojo1")
                 
                 if self.vc == None:
                     await ctx.send("No se pudo conectar al canal de voz")
-                    print("Ojo1.1")
                     return
             else:
                 await self.vc.move_to(self.music_queue[0][1])
-                print("Ojo2")
-                
             self.music_queue.pop(0)
             print("Ojo3")
             print(nurl + " is playing")
             self.vc.play(discord.FFmpegPCMAudio(nurl, **self.FFMPEG_OPTIONS), after=lambda e: self.play_next())        
         else:
             self.is_playing = False
-            
+    #This is the command that will be used to play a song from a url or search query (searches youtube)
     @commands.command(name = 'play', help = 'Plays a song from a url or search query (searches youtube)', alias = ['p',"sing","s","playing"])
     async def play(self, ctx, *args):
         query = " ".join(args)
