@@ -1,6 +1,7 @@
 import discord # pip install discord.py
 from discord.ext import commands
-
+#Not implemented in the final build of the bot, but this is the code for the help command nad can be added to the bot by adding it to the cog list in the main file there is no need at the time
+#cause of the restrictions of discord bots and the fact that the bot cannot be added to public servers any more
 class help_cog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
