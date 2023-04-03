@@ -1,8 +1,8 @@
+#All set up for the music cog to be used in the bot 03/04/2023
 import discord
 from ast import alias
 from youtube_dl import YoutubeDL
 from discord.ext import commands
-
 class music_cog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot

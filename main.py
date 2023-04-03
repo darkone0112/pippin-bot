@@ -1,3 +1,4 @@
+#EveryThing ready to implement the bot in the server
 import asyncio
 import discord
 from discord.ext import commands
