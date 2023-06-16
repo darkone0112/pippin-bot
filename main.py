@@ -31,6 +31,5 @@ async def on_ready():
     await bot.add_cog(music_cog(bot))
 
 #start the bot with our token
-bot.run(str(os.getenv('TOKEN')))
-#bot.run("MTA4ODQ4Mzc1Nzc3MTcyMjc3Mg.G1zZo7.2Yi9vpDQ4l0wPqxqgE3f9fiP_ZjlwCmO6RKZ0Y")
+bot.run(str(os.getenv('Pippin_Bot')))
 #add the token to the .env file and then import it here with os.getenv('TOKEN') or something like that
