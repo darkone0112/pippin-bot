@@ -1,7 +1,7 @@
 #All set up for the music cog to be used in the bot 03/04/2023
 import discord
 from ast import alias
-from youtube_dl import YoutubeDL
+from yt_dlp import YoutubeDL
 from discord.ext import commands
 class music_cog(commands.Cog):
     def __init__(self, bot):
@@ -25,7 +25,10 @@ class music_cog(commands.Cog):
                 get_info = ydl.extract_info("ytsearch:%s" % query, download=False)['entries'][0]
             except Exception:
                 return False
-        return {'source': get_info['formats'][0]['url'], 'title': get_info['title']}
+        get_info = ydl.sanitize_info(get_info)
+        url = get_info['url']
+        title = get_info['title']
+        return {'title': title,'source': url}
 
     def play_next(self):
         if len(self.music_queue) > 0:
