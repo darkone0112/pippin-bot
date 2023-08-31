@@ -1,5 +1,5 @@
 <h1 align="center">Pippin Bot Documentation</h1>
-Pippin Bot is a chatbot designed for use with the Discord platform. It allows users to interact with the bot through commands and provides various features such as playing music, and more. This documentation will guide you through the installation, configuration, and usage of Pippin Bot.
+Pippin Bot is a music Bot designed for use with the Discord platform. It allows users to interact with the bot through commands and provides various features such as playing music. This documentation will guide you through the installation, configuration, and usage of Pippin Bot.
 <h2>#Prerequisites</h2>
 Before installing Pippin Bot, you need to ensure that you have the following prerequisites:
 
@@ -16,15 +16,12 @@ Before installing Pippin Bot, you need to ensure that you have the following pre
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git clone https://github.com/darkone0112/pippin-bot.git<br>
 3-Change to the cloned directory:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cd pippin-bot<br>
-5-pip install -r requirements.txt<br>
-6-Create a bot account on the Discord Developer Portal.<br>
-7-Add the bot to your Discord server by following the instructions on the Discord Developer Portal.<br>
-8-Copy the bot token from the Discord Developer Portal and add it to the config.json file in the Pippin Bot repository.<br>
-
-<h2>#Configuration</h2>
-To configure Pippin Bot's behavior, edit the config.json file in the Pippin Bot repository. This file contains various settings such as the bot's prefix, default volume for music playback, and more.
-
-Additionally, you can create custom commands and responses by editing the music_cog.py and help_cog.py files. These files contain examples that can be used as templates for creating your own custom commands and responses.
+5-Create a bot account on the Discord Developer Portal.<br>
+6-Add the bot to your Discord server by following the instructions on the Discord Developer Portal.<br>
+7-Copy the bot token from the Discord Developer Portal and add it directly to the code(*harcoding a login token in the raw code is a bad practice and not the best for security you can get your bot banned from discord and github if the token is uploded to internet for example a github repositorie of your own*) or as an env(The way to go ;) )if you are using a linux distro you as ubuntu server you can add the enveriomental variable to the system using export var="the token" if you need it to be permanently upond restarts youu can follow this tutorial https://tecadmin.net/setting-up-environment-variables-on-ubuntu/ <br>
+8-Install the discord module for python "sudo pip install discord" (need pip package manager "installed sudo apt install python3.pip")
+9-Install the YoutubeDL module for python "sudo pip install youtube_dl"
+10-Afet the steps you can try to run the bot using python3 main.py inside the folder(It should start correctly then try to use the bot on the server; at the moment there is a bug in the youtube_dl master branch whe tried to play music you should receive this error:)
 
 <h2>#Usage</h2>
 To use Pippin Bot on your Discord server, simply type the bot's prefix followed by a command. For example, if the prefix is set to !, you can play music by typing !play <song name>.
